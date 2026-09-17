@@ -1,31 +1,70 @@
-# Laboratorio README
+# Sistema de Gestión de Biblioteca
 
-![Estado](https://img.shields.io/badge/version-1.0-blue)
- 
-Proyecto de práctica para aprender Markdown avanzado en GitHub.
- 
+Aplicación web diseñada para la administración y préstamo de libros en línea.
+Permite a los usuarios explorar el catálogo disponible, gestionar préstamos activos 
+y registrar nuevos ejemplares de forma rápida e intuitiva.
+
+![Estado](https://img.shields.io/badge/Estado-En_Desarrollo-yellow)
+
+---
+
+## Tabla de contenidos
+
+- [Descripción](#descripción)
+- [Instalación y Uso](#instalación-y-uso)
+- [Estado de Funcionalidades](#estado-de-funcionalidades)
+- [Tareas Pendientes](#tareas-pendientes)
+- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
+- [Contribuidores](#contribuidores)
+
+---
+
 ## Descripción
- 
-Este repositorio documenta paso a paso mi aprendizaje de Markdown:
-tablas, listas de tareas, badges y diagramas.
 
-## Estado de funcionalidades
- 
-| Función  | Estado      |
-|----------|-------------|
-| Login    | Listo       |
-| Reportes | En progreso |
+El proyecto facilita la organización de una biblioteca digital mediante una interfaz accesible.
+Está enfocado en agilizar la búsqueda de títulos y el control del inventario bibliográfico.
 
-## Pendientes
+---
+
+## Instalación y Uso
+
+Ejecuta los siguientes comandos en tu terminal para clonar e iniciar la aplicación:
+
+```bash
+# Clonar el repositorio
+git clone [https://github.com/larrycarrion-ops/app-biblioteca.git](https://github.com/larrycarrion-ops/app-biblioteca.git)
+
+# Entrar a la carpeta del proyecto
+cd app-biblioteca
+
+# Instalación de dependencias
+npm install
+
+# Iniciar la aplicación
+npm start
+```
+# estado-de-funcionalidades
+
+| Función             |Modulo         | Estado      | 
+|---------------------|---------------|-------------|
+| catalogo de libros  |vista principal| Listo       |
+| Registro de usuarios|Autenticacion  | En progreso |
+
+## tareas-pendientes 
  
 - [x] Diseño de la base de datos
 - [ ] Pruebas unitarias
- 
-## Arquitectura
+- [x] Conectar la base de datos para la busqueda de ejemplares
+
+## Arquitectura-del-proyecto
  
 ```mermaid
 graph LR
-    A[Usuario] --> B[Frontend]
-    B --> C[API]
-    C --> D[(Base de datos)]
+    A[Usuario / Lector] -->|Busca o reserva libros| B[Interfaz de Biblioteca]
+    B -->|Envía peticiones| C[API de Gestión de Préstamos]
+    C -->|Consulta disponibilidad| D[(Base de Datos de Libros)]
 ```
+## Contribuidores
+
+- **Nombre:** Larry Carrión
+- **GitHub:** [@larrycarrion-ops](https://github.com/larrycarrion-ops)
